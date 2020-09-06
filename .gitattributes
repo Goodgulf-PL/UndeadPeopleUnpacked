@@ -3,3 +3,9 @@
 
 # Exclude git files
 .* export-ignore
+MSX++UnDeadPeopleEdition export-ignore
+!default_mods export-ignore
+!major_mods export-ignore
+!misc_mods export-ignore
+scripts export-ignore
+trash export-ignore
