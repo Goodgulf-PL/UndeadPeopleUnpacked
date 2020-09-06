@@ -28,12 +28,11 @@ jobs:
         id: build
         run: |
           curl https://raw.githubusercontent.com/Goodgulf-PL/UndeadPeopleUnpacked/master/scripts/compose.py -O
-          pwd
-          ls -la
           python3 compose.py "!dda"
           release_name=gfx/MSX++UnDeadPeopleEdition-$(basename $GITHUB_REF | cut -c 2-)
           tileset_dir="!dda"
           mkdir $release_name
+          ls -la
           mv $tileset_dir/*.png            $release_name
           mv $tileset_dir/tile_config.json $release_name
           mv $tileset_dir/tileset.txt      $release_name
@@ -47,7 +46,7 @@ jobs:
         with:
           tag_name: ${{ github.ref }}
           release_name: MSX++UnDeadPeopleEdition ${{ github.ref }}
-          draft: true
+          draft: false
           prerelease: false
 
       - name: Upload Release Asset
