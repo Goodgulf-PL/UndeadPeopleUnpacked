@@ -15,7 +15,7 @@ jobs:
   build:
     name: Make Release
     runs-on: ubuntu-latest
-    container: alpine:3.11
+    container: alpine:latest
     steps:
       - name: Install Dependencies
         run: |
@@ -29,7 +29,7 @@ jobs:
         run: |
           curl https://raw.githubusercontent.com/Goodgulf-PL/UndeadPeopleUnpacked/master/scripts/compose.py -O
           python3 compose.py "!dda"
-          release_name=gfx/MSX++UnDeadPeopleEdition-$(basename $GITHUB_REF | cut -c 2-)
+          release_name=MSX++UnDeadPeopleEdition-$(basename $GITHUB_REF | cut -c 2-)
           tileset_dir="!dda"
           mkdir $release_name
           ls -la
