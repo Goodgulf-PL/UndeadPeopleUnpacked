@@ -37,7 +37,7 @@ jobs:
           mv $tileset_dir/tile_config.json $release_name
           mv $tileset_dir/tileset.txt      $release_name
           zip -r $release_name_ver.zip $release_name
-          echo ::set-output name=release_name_ver::$release_name_ver
+          echo ::set-output name=release_name_ver::$release_name
       - name: Create Release
         id: create_release
         uses: actions/create-release@v1.0.0
