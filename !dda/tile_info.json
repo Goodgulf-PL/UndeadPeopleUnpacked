@@ -23,6 +23,6 @@
 }
 ,
 {
-"fallback.png": { "fallback": true }
+"fallback.png": {"source": "https://github.com/SomeDeadGuy/UndeadPeopleTileset/blob/master/MSX%2B%2BUnDeadPeopleEdition/fallback.png", "fallback": true}
 }
 ]

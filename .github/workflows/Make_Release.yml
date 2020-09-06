@@ -22,17 +22,17 @@ jobs:
           apk add --no-cache musl-dev gcc vips-dev python3-dev curl zip
           pip3 install pyvips
       - name: Checkout Code
-        uses: actions/checkout@devel
+        uses: actions/checkout@master
 
       - name: Build
         id: build
         run: |
-          curl https://raw.githubusercontent.com/CleverRaven/Cataclysm-DDA/master/tools/gfx_tools/compose.py -O
-          cd UndeadPeopleUnpacked
-          python3 ../compose.py UndeadPeopleUnpacked/!dda
-          cd ..
-          release_name=MSX++UnDeadPeopleEdition-$(basename $GITHUB_REF | cut -c 2-)
-          tileset_dir=UndeadPeopleUnpacked/gfx/MSX++UnDeadPeopleEdition
+          curl https://raw.githubusercontent.com/Goodgulf-PL/UndeadPeopleUnpacked/master/scripts/compose.py -O
+          pwd
+          ls -la
+          python3 compose.py "!dda"
+          release_name=gfx/MSX++UnDeadPeopleEdition-$(basename $GITHUB_REF | cut -c 2-)
+          tileset_dir="!dda"
           mkdir $release_name
           mv $tileset_dir/*.png            $release_name
           mv $tileset_dir/tile_config.json $release_name
