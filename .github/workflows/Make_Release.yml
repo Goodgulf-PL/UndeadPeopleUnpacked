@@ -2,7 +2,7 @@
 #
 # This action is triggerd by pushing any tag starting with v (e.g. v1.0.1 or v3.D)
 #
-# The release archive will be named using the version number from the tag (e.g. SDG-1.0)
+# The release archive will be named using the version number from the tag (e.g. MSX++UnDeadPeopleEdition-1.0)
 
 on:
   push:
@@ -32,7 +32,6 @@ jobs:
           release_name=MSX++UnDeadPeopleEdition-$(basename $GITHUB_REF | cut -c 2-)
           tileset_dir="!dda"
           mkdir $release_name
-          ls -la
           mv $tileset_dir/*.png            $release_name
           mv $tileset_dir/tile_config.json $release_name
           mv $tileset_dir/tileset.txt      $release_name
