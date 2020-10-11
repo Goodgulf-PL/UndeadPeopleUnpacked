@@ -1,0 +1,8 @@
+{
+  "id": "vp_gelrazor",
+  "fg": [
+    "vp_gelrazor"
+  ],
+  "bg": ["vp_turret_mount"],
+  "rotates": true
+}
